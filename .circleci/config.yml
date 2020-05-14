@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/clojure:openjdk-8-lein
+    environment:
+      LEIN_ROOT: "true"
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - clojure-hackos-{{ checksum "project.clj" }}
+            - clojure-hackos-
+      - run: lein deps
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: clojure-hackos-{{ checksum "project.clj" }}
+      - run:
+          name: Test all solutions
+          command: lein do check, test
