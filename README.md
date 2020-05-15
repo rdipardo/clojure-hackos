@@ -1,6 +1,6 @@
 # clojure-hackos
 
-[![Build Status](https://travis-ci.com/rdipardo/clojure-hackos.svg?token=yCqYFpeQtymaztY4Spav&branch=master)](https://travis-ci.com/rdipardo/clojure-hackos)
+[![TravisCI](https://travis-ci.com/rdipardo/clojure-hackos.svg?token=yCqYFpeQtymaztY4Spav&branch=master)](https://travis-ci.com/rdipardo/clojure-hackos)  [![CircleCI](https://circleci.com/gh/rdipardo/clojure-hackos.svg?style=svg)](https://circleci.com/gh/rdipardo/clojure-hackos)
 
 Solutions to various *HackerRank* challenges, in Clojure.
 
@@ -40,11 +40,11 @@ Solutions to various *HackerRank* challenges, in Clojure.
 
 ## Testing the solutions
 
-### Leiningen
+##### Leiningen
 
     lein do -U deps, check, test
 
-### Docker
+##### Docker
 
 *Requires `BUILDKIT` support (Docker versions >= 18.09)*
 
@@ -54,11 +54,11 @@ Solutions to various *HackerRank* challenges, in Clojure.
 
 *The default namespace is a [tiny helper library](src/clojure_hackos/helpers.clj) as some solutions depend on external functions.*
 
-### Leiningen
+##### Leiningen
 
     lein repl
 
-### Docker
+##### Docker
 
     docker run --volume=$(pwd):/app -it clojure-hackos:0.1.0
 
@@ -72,4 +72,4 @@ Your suggestions for improvement will be greatly appreciated!
 ## License
 
 Any copyright is dedicated to the Public Domain.
-For more information, please refer to http://unlicense.org.
+For more information, please refer to https://unlicense.org.
