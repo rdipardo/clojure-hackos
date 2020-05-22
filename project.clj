@@ -1,4 +1,4 @@
-(defproject clojure-hackos "0.1.0"
+(defproject clojure-hackos "0.1.1"
   :description "Clojurian solutions to various HackerRank challenges"
   :url "https://github.com/rdipardo/clojure-hackos"
   :license {:name "Public Domain"

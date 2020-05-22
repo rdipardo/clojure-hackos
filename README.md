@@ -48,7 +48,7 @@ Solutions to various *HackerRank* challenges, in Clojure.
 
 *Requires `BUILDKIT` support (Docker versions >= 18.09)*
 
-    DOCKER_BUILDKIT=1 docker build -t clojure-hackos:0.1.0 .
+    DOCKER_BUILDKIT=1 docker build -t clojure-hackos:0.1.1 .
 
 ## The REPL environment
 
@@ -60,7 +60,7 @@ Solutions to various *HackerRank* challenges, in Clojure.
 
 ##### Docker
 
-    docker run --volume=$(pwd):/app -it clojure-hackos:0.1.0
+    docker run --volume=$(pwd):/app -it clojure-hackos:0.1.1
 
 
 ## Contribute

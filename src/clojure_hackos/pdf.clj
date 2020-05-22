@@ -16,7 +16,7 @@
      (map
       #(last %)
       (->>
-       ;; Index letter heights by their ASCII code points, starting with `a `(97);
+       ;; Index letter heights by their ASCII code points, starting with `a` (97);
        ;; convert `word` to a sequence of code points; map each one to an index.
        (map-indexed #(list (+ 97 %1) %2) letter-heights)
        (filter

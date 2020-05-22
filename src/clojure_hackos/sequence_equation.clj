@@ -5,7 +5,7 @@
 
 (defn permute
   "Returns the sequence of elements in `p` that satisfy the equation:
-   `p(p(y)) `&#8801; `x`, where `x` is any value in the interval `[1, n(p)]`."
+   `p(p(y))` &#8801; `x`, where `x` is any value in the interval `[1, n(p)]`."
   [n p]
   (let [x-values (sort (range 1 (inc n)))]
     (when (and
