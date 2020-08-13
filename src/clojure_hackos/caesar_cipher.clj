@@ -1,7 +1,7 @@
 (ns clojure-hackos.caesar-cipher
   "Solves the *Caesar Cipher* challenge.
    See: https://www.hackerrank.com/challenges/caesar-cipher-1"
-  (:require [clojure-hackos.helpers :refer [idx-of]]))
+  (:require [clojure-hackos.lib.helpers :refer [idx-of]]))
 
 (def ^:private lc-alpha
   "Lowercase letters, mapped to their ASCII code points."

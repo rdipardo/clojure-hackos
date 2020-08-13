@@ -4,7 +4,7 @@
   :license {:name "Public Domain"
             :url "https://unlicense.org"}
   :dependencies [[org.clojure/clojure "1.10.0"]]
-  :repl-options {:init-ns clojure-hackos.helpers}
+  :repl-options {:init-ns clojure-hackos.lib.helpers}
   :target-path "target/%s"
   :profiles {:dev
              {:dependencies [[criterium "0.4.5"]]
