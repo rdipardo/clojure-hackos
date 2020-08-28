@@ -1,4 +1,4 @@
-(ns clojure-hackos.lib.geometry
+(ns clojure-hackos.utils.geometry
   "Utilities for computing dimensions of 2D figures")
 
 (defn line-segments
@@ -14,7 +14,8 @@
                sides)))))
 
 (defn distance
-  "Computes the distance between two points (i.e., the length of line segment)."
+  "Computes the distance between two points (i.e., the length of a line
+  segment)."
   [coord-pair]
   (let [sqr #(* % %)]
     (Math/sqrt (+ (sqr (reduce - (map first coord-pair)))

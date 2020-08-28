@@ -1,9 +1,12 @@
 (ns clojure-hackos.polygonal-area
   "Solution to the *Compute the Area of a Polygon* challenge
   See: https://www.hackerrank.com/challenges/lambda-march-compute-the-area-of-a-polygon"
-  (:require [clojure-hackos.lib.geometry :as g]))
+  (:require [clojure-hackos.utils.geometry :as g]))
 
-(defn area [coords]
+(defn area
+  "Computes the area of a figure with vertices at the given sequence of
+  co-ordinates"
+  [coords]
   (let [segments (g/line-segments coords)
         sides (map g/distance segments)
         abs #(if (neg? %) (- %) %)]
@@ -17,7 +20,7 @@
       (abs (reduce + (map g/concave-area segments))))))
 
 (defn try-me
-  "Demonstrates the `area` function by reading in the following inputs:
+  "Demonstrates [[area]] by reading in the following inputs:
   - the number of vertices in the figure
   - the x-y co-ordinates of each vertex, each pair on a single line"
   []

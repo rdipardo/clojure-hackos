@@ -1,7 +1,7 @@
 (ns clojure-hackos.sequence-equation
   "Solution to the *Sequence Equation* problem
   See: https://www.hackerrank.com/challenges/permutation-equation"
-  (:require [clojure-hackos.lib.helpers :refer [idx-of]]))
+  (:require [clojure-hackos.utils.helpers :refer [idx-of]]))
 
 (defn permute
   "Returns the sequence of elements in `p` that satisfy the equation:

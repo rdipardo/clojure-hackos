@@ -1,7 +1,7 @@
 (ns clojure-hackos.helpers-test
   (:require
    [clojure.test :refer [deftest testing is]]
-   [clojure-hackos.lib.helpers :as h]))
+   [clojure-hackos.utils.helpers :as h]))
 
 (deftest idx-of-returns-index-when-found
   (testing "Test retrieval of existing index"

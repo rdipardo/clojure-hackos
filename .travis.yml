@@ -1,2 +1,5 @@
 language: clojure
+cache:
+  directories:
+    - $HOME/.m2
 script: lein do check, test

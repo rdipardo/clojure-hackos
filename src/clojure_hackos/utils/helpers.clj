@@ -1,5 +1,16 @@
-(ns clojure-hackos.lib.helpers
+(ns clojure-hackos.utils.helpers
   "Assorted useful functions")
+
+(defn- every-step?
+  "Returns `true` if the arithmetic difference between every pair of elements
+  in `coll` satisfies the given `pred`."
+  [pred coll]
+  (let [len (count coll)]
+    (if (<= len 1) true
+        (->> (range (dec len))
+             (take-while #(pred (- (nth coll (inc %) 0) (nth coll %))))
+             (count)
+             (= (dec len))))))
 
 (defn idx-of
   "Returns the index of `e` in the given `arr`, or `-1` if `e` is not found."
@@ -10,19 +21,8 @@
                         #(and (< % len)
                               (not= e (nth arr % nil)))
                         (iterate inc -1))))]
-
       (if (< res len) res -1)
       -1)))
-
-(defn- deltas
-  "Generates a sequence of the arithmetic differences between each pair of
-  elements in the given `coll`."
-  [coll]
-  (->> (range (dec (count coll)))
-       (reduce
-        (fn [pairs i]
-          (conj pairs (- (nth coll (inc i) 0) (nth coll i))))
-        [])))
 
 (defn ordered?
   "Returns the logical result of applying the given `pred` function to the
@@ -38,6 +38,6 @@
   ;; => true
   ```"
   ([coll]
-   (every? nat-int? (deltas coll)))
+   (every-step? nat-int? coll))
   ([pred coll]
-   (every? pred (deltas coll))))
+   (every-step? pred coll)))
