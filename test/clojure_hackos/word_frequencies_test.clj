@@ -27,6 +27,6 @@
   (testing "Test against obscure HR test case"
     (let [res
           (tio/with-input
-            wf/proper-subset-of? "resources/huge_word_freqs.txt")]
+            wf/proper-subset-of? "huge_word_freqs.txt")]
       (when-not (nil? res)
         (is (= "Yes"))))))

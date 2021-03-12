@@ -11,4 +11,4 @@
   [n]
    ;; Avoid overflows: use the operator version that supports arbitrary
    ;; precision
-   (str (reduce *' 1 (take-while #(> % 1) (iterate dec n)))))
+  (str (reduce *' 1 (range n 1 -1))))

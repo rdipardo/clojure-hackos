@@ -10,9 +10,8 @@
   (loop [games 0 prices '() total 0]
     (if (>= total s) games
         (let [running-total (reduce + prices)
-              next-price (if (< m (- p (* d games)))
-                           (- p (* d games))
-                           m)]
+              price (- p (* d games))
+              next-price (if (< m price) price m)]
           (recur
            (if (>= s (+ running-total next-price))
              (inc games)

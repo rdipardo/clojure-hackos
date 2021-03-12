@@ -1,8 +1,17 @@
-version: 2
+version: 2.1
+workflows:
+  lein_test:
+    jobs:
+      - build:
+          context:
+            - docker-hub-creds
 jobs:
   build:
     docker:
       - image: circleci/clojure:openjdk-8-lein
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD
     environment:
       LEIN_ROOT: "true"
       JVM_OPTS: -Xmx3200m

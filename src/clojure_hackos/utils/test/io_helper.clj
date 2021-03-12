@@ -6,7 +6,7 @@
 
 (defn- strs->coords
   "Converts a sequence of strings representing co-ordinate pairs to their
-  linalg equivalents."
+  numeric equivalents."
   [strs]
   (map
    (fn [xy] (mapv #(Integer/parseInt %) (re-seq #"\d+" xy)))
@@ -17,7 +17,7 @@
   co-oridnates when the `linalg` option is `true`."
   [f file & {:keys [linalg] :or {linalg false}}]
   (let [input (try
-                (jio/reader (jio/as-relative-path file))
+                (jio/reader (jio/resource file))
                 (catch FileNotFoundException exc
                   (println "Broken test case:" (.getMessage exc))))
         res (when-let [data input]

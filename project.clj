@@ -8,6 +8,6 @@
   :target-path "target/%s"
   :profiles {:dev
              {:dependencies [[criterium "0.4.6"]]
-              :plugins [[cider/cider-nrepl "0.25.3"]
-                        [lein-cljfmt "0.6.8"]]}
+              :plugins [[cider/cider-nrepl "0.25.9"]
+                        [lein-cljfmt "0.7.0"]]}
              :uberjar {:aot :all}})

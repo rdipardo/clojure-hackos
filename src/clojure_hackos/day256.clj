@@ -7,6 +7,13 @@
 
 (set! *warn-on-reflection* true)
 
+(defn- leap-year? [y]
+  "Returns `true` if the given year is a leap year in the Gregorian calendar."
+  (condp #(zero? (mod %2 %1)) y
+    400 true
+    4 (not (zero? (mod y 100)))
+    false))
+
 (defn day-of-programmer
   "Finds the 256<sup>th</sup> day of the given `year` and returns it as a
   formatted date string."
@@ -18,11 +25,9 @@
                       (- day-of (inc days-before))
                       (- day-of days-before))
                   = (- day-of (- days-before 13))
-                  :else (if (or (zero? (mod year 400))
-                                (and (zero? (mod year 4))
-                                     (not (zero? (mod year 100)))))
-                          (- day-of (inc days-before))
-                          (- day-of days-before)))
+                  (if (leap-year? year)
+                    (- day-of (inc days-before))
+                    (- day-of days-before)))
         date (GregorianCalendar. year 8 day-256)
         formatter (SimpleDateFormat. "dd.MM.yyyy")]
 

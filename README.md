@@ -17,6 +17,7 @@ Solutions to various *HackerRank* challenges, in Clojure.
 | [Extra Long Factorials][]              |                          |                                  |
 | [Find Digits][]                        |                          |                                  |
 | [Minimum Distances][]                  |                          |                                  |
+| [Pascal's Triangle][]                  |                          |                                  |
 | [Sequence Equation][]                  |                          |                                  |
 
 *Links to the challenges are in each source file*
@@ -74,6 +75,7 @@ For more information, please refer to https://unlicense.org.
 [Find Digits]: src/clojure_hackos/divisors.clj
 [Halloween Sale]: src/clojure_hackos/halloween_sale.clj
 [Minimum Distances]: src/clojure_hackos/minimum_distances.clj
+[Pascal's Triangle]: src/clojure_hackos/triangle_arithmétique.clj
 [Ransom Note]: src/clojure_hackos/word_frequencies.clj
 [Sequence Equation]: src/clojure_hackos/sequence_equation.clj
 [String Compression]: src/clojure_hackos/string_compression.clj
